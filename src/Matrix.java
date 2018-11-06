@@ -47,7 +47,7 @@ public class Matrix {
 
         for (int i = 0; i < cols; i++) {
             for (int j = 0; j < rows; j++) {
-                newMatrix[i][j] = matrix[i][j] + other.getValue(i, j);
+                newMatrix[i][j] = getValue(i, j) + other.getValue(i, j);
             }
         }
 
@@ -55,11 +55,23 @@ public class Matrix {
     }
 
     public Matrix multiply(Matrix other) {
-        if (rows != other.cols) return null;
+        if (cols != other.getRows()) return null;
 
-        double[][] newMatrix = new double[cols][other.rows];
+        double[][] newMatrix = new double[rows][other.getCols()];
 
-//        for (int i = 0; i < rows; i++)
-        return null;
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < other.getCols(); j++) {
+                double entrySum = 0.0;
+
+                for (int k = 0; k < cols; k++) {
+                    System.out.println();
+                    entrySum += getValue(i, k) * other.getValue(k, j);
+                }
+                
+                newMatrix[i][j] = entrySum;
+            }
+        }
+
+        return new Matrix(newMatrix);
     }
 }
