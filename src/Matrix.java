@@ -5,12 +5,6 @@ public class Matrix {
     private int cols;
     private double[][] matrix;
 
-    public Matrix(int rows, int cols) {
-        this.rows = rows;
-        this.cols = cols;
-        matrix = new double[rows][cols];
-    }
-
     public Matrix(double[][] matrix) {
         this.rows = matrix.length;
         this.cols = matrix[0].length;
@@ -91,8 +85,9 @@ public class Matrix {
         double[][] newMatrix = new double[cols][rows];
 
         for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++)
+            for (int j = 0; j < cols; j++) {
                 newMatrix[j][i] = matrix[i][j];
+            }
         }
 
         return new Matrix(newMatrix);
