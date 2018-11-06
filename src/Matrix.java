@@ -1,38 +1,65 @@
+import java.util.Arrays;
+
 public class Matrix {
+    private int rows;
+    private int cols;
     private double[][] matrix;
-    private int width;
-    private int height;
 
-    public Matrix(int width, int height) {
-        this.width = width;
-        this.height = height;
-        matrix = new double[width][height];
+    public Matrix(int rows, int cols) {
+        this.rows = rows;
+        this.cols = cols;
+        matrix = new double[rows][cols];
     }
 
-    public int getWidth() {
-        return width;
+    public Matrix(double[][] matrix) {
+        this.rows = matrix.length;
+        this.cols = matrix[0].length;
+        this.matrix = matrix;
     }
 
-    public int getHeight() {
-        return height;
+    public int getRows() {
+        return rows;
+    }
+
+    public int getCols() {
+        return cols;
+    }
+
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+
+        for (double[] row : matrix) {
+            if (builder.length() != 0) builder.append(",\r\n");
+            builder.append("  " + Arrays.toString(row));
+        }
+
+        return "[\r\n" + builder.toString() + "\r\n]";
     }
 
     public double getValue(int i, int j) {
         return matrix[i][j];
     }
 
-    public void add(Matrix other) {
-        if (other.getWidth() != width || other.getHeight() != height)
-            return;
+    public Matrix add(Matrix other) {
+        if (other.getRows() != rows || other.getCols() != cols) return null;
 
-        for (int i = 0; i < width; i++) {
-            for (int j = 0; j < height; j++) {
-                matrix[i][j] += other.getValue(i, j);
+        double[][] newMatrix = new double[cols][rows];
+
+        for (int i = 0; i < cols; i++) {
+            for (int j = 0; j < rows; j++) {
+                newMatrix[i][j] = matrix[i][j] + other.getValue(i, j);
             }
         }
+
+        return new Matrix(newMatrix);
     }
 
-    public void multiply(Matrix other) {
+    public Matrix multiply(Matrix other) {
+        if (rows != other.cols) return null;
 
+        double[][] newMatrix = new double[cols][other.rows];
+
+//        for (int i = 0; i < rows; i++)
+        return null;
     }
 }
