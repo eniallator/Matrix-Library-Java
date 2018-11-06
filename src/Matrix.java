@@ -67,9 +67,20 @@ public class Matrix {
                     System.out.println();
                     entrySum += getValue(i, k) * other.getValue(k, j);
                 }
-                
+
                 newMatrix[i][j] = entrySum;
             }
+        }
+
+        return new Matrix(newMatrix);
+    }
+
+    public Matrix transpose() {
+        double[][] newMatrix = new double[cols][rows];
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++)
+                newMatrix[j][i] = matrix[i][j];
         }
 
         return new Matrix(newMatrix);

@@ -17,23 +17,31 @@ class Main {
 //
 //        System.out.println(A.toString() + "\r\n+\r\n" + B.toString() + "\r\n=\r\n" + result.toString());
 
-        double[][] arrayA = {
-                {1, 2, 3, 4, 5}
+//        double[][] arrayA = {
+//                {1.0, 2.0, 3.0, 4.0, 5.0}
+//        };
+//
+//        double[][] arrayB = {
+//                {1.0},
+//                {2.0},
+//                {3.0},
+//                {4.0},
+//                {5.0}
+//        };
+//
+//        Matrix A = new Matrix(arrayA);
+//        Matrix B = new Matrix(arrayB);
+//
+//        Matrix result = A.multiply(B);
+//
+//        System.out.println(A.toString() + "\r\n+\r\n" + B.toString() + "\r\n=\r\n" + result.toString());
+
+        double[][] arrayC = {
+                {1.0, 2.0, 3.0},
+                {4.0, 5.0, 6.0}
         };
+        Matrix C = new Matrix(arrayC);
 
-        double[][] arrayB = {
-                {1},
-                {2},
-                {3},
-                {4},
-                {5}
-        };
-
-        Matrix A = new Matrix(arrayA);
-        Matrix B = new Matrix(arrayB);
-
-        Matrix result = A.multiply(B);
-
-        System.out.println(A.toString() + "\r\n+\r\n" + B.toString() + "\r\n=\r\n" + result.toString());
+        System.out.println(C.transpose());
     }
 }
