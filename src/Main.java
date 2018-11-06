@@ -43,5 +43,6 @@ class Main {
         Matrix C = new Matrix(arrayC);
 
         System.out.println(C.transpose());
+        System.out.println(C.multiply(3.0));
     }
 }

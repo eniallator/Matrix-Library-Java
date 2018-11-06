@@ -75,6 +75,18 @@ public class Matrix {
         return new Matrix(newMatrix);
     }
 
+    public Matrix multiply(double scalar) {
+        double[][] newMatrix = new double[rows][cols];
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                newMatrix[i][j] = matrix[i][j] * scalar;
+            }
+        }
+
+        return new Matrix(newMatrix);
+    }
+
     public Matrix transpose() {
         double[][] newMatrix = new double[cols][rows];
 
