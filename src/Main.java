@@ -15,7 +15,7 @@ class Main {
 //        Matrix B = new Matrix(arrayB);
 //        Matrix result = A.add(B);
 //
-//        System.out.println(A.toString() + "\r\n+\r\n" + B.toString() + "\r\n=\r\n" + result.toString());
+//        System.out.println(A + "\r\n+\r\n" + B + "\r\n=\r\n" + result);
 
 //        double[][] arrayA = {
 //                {1.0, 2.0, 3.0, 4.0, 5.0}
@@ -34,7 +34,7 @@ class Main {
 //
 //        Matrix result = A.multiply(B);
 //
-//        System.out.println(A.toString() + "\r\n+\r\n" + B.toString() + "\r\n=\r\n" + result.toString());
+//        System.out.println(A + "\r\n*\r\n" + B + "\r\n=\r\n" + result);
 
         double[][] arrayC = {
                 {1.0, 2.0, 3.0},

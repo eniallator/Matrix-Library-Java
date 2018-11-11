@@ -58,7 +58,6 @@ public class Matrix {
                 double entrySum = 0.0;
 
                 for (int k = 0; k < cols; k++) {
-                    System.out.println();
                     entrySum += getValue(i, k) * other.getValue(k, j);
                 }
 
